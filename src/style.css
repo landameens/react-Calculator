@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --bg-color: #f9f9f9;
+    --main-color: #fff;
+    --border-color: #aaa;
+    --footer-color: #ddd;
+    --positive-color: rgb(100, 145, 12);
+    --negative-color: rgb(231, 60, 29);
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: black;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+input, button {
+    font: inherit;
+}
+
+.container {
+    margin: 0 auto;
+    width: 400px;
+}
+
+
+h1, h2, h3 {
+    line-height: 1.5;
+}
+
+h4 {
+    text-transform: uppercase;
+}
+
+main {
+    margin-top: 30px;
+}
+
+.total {
+    padding: 20px;
+    background-color: var(--main-color);
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+}
+
+.total__balance {
+    font-size: 1.75em;
+    font-weight: bold;
+}
+
+.total__header {
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total__main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total__main-item {
+    flex: 1;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.total__main-item:first-child {
+    border-right: 1px solid var(--border-color);
+}
+
+.total__money {
+    font-size: 1.5em;
+    line-height: 1.5;
+}
+
+.total__money-expenses {
+    color: var(--negative-color);
+}
+
+.total__money-income {
+    color: var(--positive-color);
+}
+
+.history {
+    margin-top: 40px;
+}
+
+.history__item {
+    align-items: center;
+    background-color: var(--main-color);
+    border-width: 1px;
+    border-style: solid;
+    border-left: 10px solid;
+    border-right: 10px solid;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px 0;
+    line-height: 25px;
+}
+
+.history__item-plus {
+    border-left-color: var(--positive-color);
+    border-right-color: var(--positive-color);
+}
+
+.history__item-minus {
+    border-left-color: var(--negative-color);
+    border-right-color: var(--negative-color);
+}
+
+.history__money {
+    flex: 1;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.history__delete {
+    background-color: transparent;
+    color: red;
+    padding: 0;
+    border-width: 0;
+    font-size: 1.25em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.history__item:hover .history__delete {
+    opacity: 1;
+}
+
+.operation {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: var(--footer-color);
+    border-radius: 25px;
+    padding: 15px 15px;
+}
+
+
+.operation__fields {
+    display: block;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 5px 0;
+    width: 100%;
+    outline: transparent;
+}
+
+.operation__fields:focus {
+    border: 1px solid darkorange;
+}
+
+.operation__btns {
+    display: flex;
+    justify-content: space-around;
+}
+
+.operation__btn {
+    border-width: 2px;
+    border-style: solid;
+    color: var(--main-color);
+    border-radius: 10px;
+    font-size: 1.25em;
+    font-weight: 700;
+    padding: 15px 30px;
+    margin: 15px 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.operation__btn-subtract {
+    background-color: var(--negative-color);
+    border-color: var(--negative-color);
+}
+
+.operation__btn-subtract:hover {
+    background-color: var(--main-color);
+    color: var(--negative-color)
+}
+
+.operation__btn-add {
+    background-color: var(--positive-color);
+    border-color: var(--positive-color);
+}
+
+.operation__btn-add:hover {
+    background-color: var(--main-color);
+    color: var(--positive-color)
+}
+
+@media (max-width: 400px) {
+    body {
+        font-size: 14px;
+    }
+    .container {
+        width: 320px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        display: none;
+    }
+}
