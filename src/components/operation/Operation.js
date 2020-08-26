@@ -31,7 +31,7 @@ function Operation({
           />
         </label>
 
-        <div class="operation__btns">
+        <div className="operation__btns">
           <button
             onClick={() => addTransaction(false)}
             type="button"
